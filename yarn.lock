@@ -1503,6 +1503,10 @@ address@1.1.2, address@^1.0.1:
   version "1.1.2"
   resolved "https://cichang8.com:7777/address/-/address-1.1.2.tgz#bf1116c9c758c51b7a933d296b72c221ed9428b6"
 
+adhere@1.x:
+  version "1.2.3"
+  resolved "https://cichang8.com:7777/adhere/-/adhere-1.2.3.tgz#3719ac497758735c817381a756720be7ba0360a2"
+
 adjust-sourcemap-loader@2.0.0:
   version "2.0.0"
   resolved "https://cichang8.com:7777/adjust-sourcemap-loader/-/adjust-sourcemap-loader-2.0.0.tgz#6471143af75ec02334b219f54bc7970c52fb29a4"
@@ -2278,6 +2282,10 @@ cache-base@^1.0.1:
     to-object-path "^0.3.0"
     union-value "^1.0.0"
     unset-value "^1.0.0"
+
+cadence@1.x:
+  version "1.0.12"
+  resolved "https://cichang8.com:7777/cadence/-/cadence-1.0.12.tgz#6e3bf71404c9f654f8ca31b1474f6fdfab63477a"
 
 call-me-maybe@^1.0.1:
   version "1.0.1"
@@ -3340,6 +3348,14 @@ ecc-jsbn@~0.1.1:
 ee-first@1.1.1:
   version "1.1.1"
   resolved "https://cichang8.com:7777/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
+
+eject@^0.0.4:
+  version "0.0.4"
+  resolved "https://cichang8.com:7777/eject/-/eject-0.0.4.tgz#bad7c33522e63fe963ccb713d0cb0ee7a975d8fb"
+  dependencies:
+    adhere "1.x"
+    cadence "1.x"
+    interrupt "1.x"
 
 electron-to-chromium@^1.3.341, electron-to-chromium@^1.3.349:
   version "1.3.349"
@@ -4672,6 +4688,12 @@ internal-ip@^4.3.0:
   dependencies:
     default-gateway "^4.2.0"
     ipaddr.js "^1.9.0"
+
+interrupt@1.x:
+  version "1.2.0"
+  resolved "https://cichang8.com:7777/interrupt/-/interrupt-1.2.0.tgz#8f8e0d0cfba190e74682e82d8f0439205a670209"
+  dependencies:
+    supersede "1.x"
 
 invariant@^2.2.2, invariant@^2.2.4:
   version "2.2.4"
@@ -8129,6 +8151,13 @@ redent@^3.0.0:
     indent-string "^4.0.0"
     strip-indent "^3.0.0"
 
+redux@^4.0.5:
+  version "4.0.5"
+  resolved "https://cichang8.com:7777/redux/-/redux-4.0.5.tgz#4db5de5816e17891de8a80c424232d06f051d93f"
+  dependencies:
+    loose-envify "^1.4.0"
+    symbol-observable "^1.2.0"
+
 regenerate-unicode-properties@^8.1.0:
   version "8.1.0"
   resolved "https://cichang8.com:7777/regenerate-unicode-properties/-/regenerate-unicode-properties-8.1.0.tgz#ef51e0f0ea4ad424b77bf7cb41f3e015c70a3f0e"
@@ -9061,6 +9090,10 @@ stylehacks@^4.0.0:
     postcss "^7.0.0"
     postcss-selector-parser "^3.0.0"
 
+supersede@1.x:
+  version "1.0.6"
+  resolved "https://cichang8.com:7777/supersede/-/supersede-1.0.6.tgz#27ce9eaaf0b81e9ea31d7471c7aa4cb153f50065"
+
 supports-color@^2.0.0:
   version "2.0.0"
   resolved "https://cichang8.com:7777/supports-color/-/supports-color-2.0.0.tgz#535d045ce6b6363fa40117084629995e9df324c7"
@@ -9104,6 +9137,10 @@ svgo@^1.0.0, svgo@^1.2.2:
     stable "^0.1.8"
     unquote "~1.1.1"
     util.promisify "~1.0.0"
+
+symbol-observable@^1.2.0:
+  version "1.2.0"
+  resolved "https://cichang8.com:7777/symbol-observable/-/symbol-observable-1.2.0.tgz#c22688aed4eab3cdc2dfeacbb561660560a00804"
 
 symbol-tree@^3.2.2:
   version "3.2.4"
