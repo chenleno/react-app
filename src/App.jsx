@@ -4,7 +4,9 @@ import SideBar from './layout/Sidebar'
 import Dashboard from './modules/dashboard'
 import Setting from './modules/setting'
 import { Route } from 'react-router-dom'
-import styled from 'styled-components'
+import { connect } from 'react-redux'
+import Login from './modules/login'
+import _ from 'lodash'
 
 const Content = props => {
   return (
@@ -20,17 +22,25 @@ const MainView = props => {
   )
 }
 
+@connect(({ login }) => ({ profile: login.profile }), null)
 class App extends React.Component {
   render() {
+    const isLogin = !!_.get(this.props.profile, 'username', '')
     return (
-      <MainView>
-        <Header/>
-        <SideBar/>
-        <Content>
-          <Route activeStyle={{ color: 'red' }} path={'/dashboard'} component={Dashboard}/>
-          <Route path={'/setting'} component={Setting}/>
-        </Content>
-      </MainView>
+      <React.Fragment>
+        {isLogin ? 
+        <MainView>
+          <Header/>
+          <SideBar/>
+          <Content>
+            <Route activeStyle={{ color: 'red' }} path={'/dashboard'} component={Dashboard}/>
+            <Route path={'/setting'} component={Setting}/>
+          </Content>
+        </MainView> :
+        <Login />
+        }
+      </React.Fragment>
+      
     )
   }
 }
