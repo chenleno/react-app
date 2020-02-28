@@ -2,9 +2,10 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
 import './login.less'
-import { login } from '../../reducers/actions'
+// import { login } from 'reducers/actions'
+// import * as actionCreaters from 'reducers/actions'
 
-@connect(({ profile }) => ({ profile }), { login })
+@connect(({ profile }) => ({ profile }))
 class NormalLoginForm extends React.Component {
   handleSubmit = e => {
     e.preventDefault();
@@ -12,14 +13,12 @@ class NormalLoginForm extends React.Component {
       if (!err) {
         console.log('Received values of form: ', values);
       }
-      console.log(1)
-      console.log(this.props.login(values))
-      this.props.dispatch(this.props.login(values))
+      const { login } = this.props
+      login(values)
     });
   };
 
   render() {
-    console.log(this.props.login)
     const { getFieldDecorator } = this.props.form;
     return (
       <Form onSubmit={this.handleSubmit} className="login-form">

@@ -4,3 +4,10 @@ export const login = values => {
     data: values
   }
 }
+
+export const logout = values => {
+  return {
+    type: 'LOGOUT',
+    data: values
+  }
+}
