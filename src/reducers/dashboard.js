@@ -1,6 +1,5 @@
 
 const initState = {
-  dashboard: {}
 }
 export default (state = initState, action) => {
   switch (action.type) {
