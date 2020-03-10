@@ -1,8 +1,10 @@
-import storage from 'utils/helper/storage'
+// import storage from 'utils/helper/storage'
+import { storage } from '@lenochen/dio'
 
 const initState = {
   profile: {}
 }
+
 export default (state = initState, action) => {
   switch (action.type) {
     case 'LOGIN':
