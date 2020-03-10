@@ -164,5 +164,8 @@
         }
       ]
     ]
+  },
+  "devDependencies": {
+    "@lenochen/dio": "^1.0.2"
   }
 }
