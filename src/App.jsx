@@ -9,7 +9,7 @@ import { bindActionCreators } from 'redux'
 import Login from './modules/login'
 import _ from 'lodash'
 import * as actionCreaters from 'reducers/actions'
-import storage from 'utils/helper/storage'
+import storage from '@lenochen/dio'
 import styled from 'styled-components'
 // import View from 'compontents/View'
 
