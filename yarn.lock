@@ -1003,6 +1003,10 @@
     "@types/istanbul-reports" "^1.1.1"
     "@types/yargs" "^13.0.0"
 
+"@lenochen/dio@^1.0.2":
+  version "1.0.3"
+  resolved "https://registry.npmjs.org/@lenochen/dio/-/dio-1.0.3.tgz#42b293a9a967806621303c9f686ba9a9a1dc8a18"
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://cichang8.com:7777/@mrmlnc%2freaddir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"

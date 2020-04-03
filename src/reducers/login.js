@@ -1,5 +1,5 @@
 // import storage from 'utils/helper/storage'
-import { storage } from '@lenochen/dio'
+import { storage, uniq } from '@lenochen/dio'
 
 const initState = {
   profile: {}
