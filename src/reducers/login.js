@@ -1,8 +1,10 @@
 // import storage from 'utils/helper/storage'
-import { storage, uniq } from '@lenochen/dio'
+import { storage } from '@lenochen/dio'
+import Api from 'conf/APIS'
 
 const initState = {
-  profile: {}
+  profile: {},
+  isLogin: false
 }
 
 export default (state = initState, action) => {
@@ -11,10 +13,24 @@ export default (state = initState, action) => {
       storage.setItem('profile', action.data)
       return {
         ...initState,
-        profile: action.data
+        profile: action.data,
+        isLogin: true
       }
+    case 'LOGOUT':
+      localStorage.clear()
+      return initState
     default:
       return initState
   }
 }
 
+export const login = values => ({
+  type: 'LOGIN',
+  promise: client => client.get(Api, { ...values }),
+  args: values
+})
+
+export const logout = () => ({
+  type: 'LOGOUT',
+  promise: client => client.get(Api)
+})
