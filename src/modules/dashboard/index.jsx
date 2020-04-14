@@ -1,7 +1,9 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
 
 const Dashboard = props => {
-  console.log(props)
+  const id = useParams()
+  console.log(id)
   return (
     <div>
       这是dashboard,

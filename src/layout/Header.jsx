@@ -3,7 +3,9 @@ import { connect } from 'react-redux'
 import styled from 'styled-components'
 import { Button, Avatar } from 'antd'
 import { logout } from 'reducers/login'
-import { withRouter } from 'react-router-dom'
+// import { withRouter } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
+
 
 const HeaderWrap = styled.div`
   width: 100%;
@@ -21,7 +23,7 @@ const ActionBar = styled.div`
 `
 
 const Header = props => {
-  const { history } = props
+  const history = useHistory()
   const logout = async () => {
     await props.logout()
     history.push('/login')
@@ -41,4 +43,4 @@ const Header = props => {
   )
 }
 
-export default withRouter(connect(null, { logout })(Header))
+export default connect(null, { logout })(Header)
