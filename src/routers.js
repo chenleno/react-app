@@ -11,7 +11,7 @@ const routerMap = [
   { name: 'setting', path: '/setting', component: Setting, auth: true},
   { name: 'user', path: '/user', component: User, auth: true, 
     childRoutes: [
-      { name: 'userDetail', path: '/user/detail/:id', component: UserDetail, auth: true}
+      { name: 'userDetail', path: '/user/detail/:id', component: UserDetail, auth: true }
     ]
   },
 ]

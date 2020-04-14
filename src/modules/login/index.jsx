@@ -33,7 +33,6 @@ class NormalLoginForm extends React.Component {
       try {
         const resp = await login(values)
         if(resp) {
-          console.log(this.props.location)
           const fromPath = _.get(this.props.location, 'from.pathname', '')
           let redirectURL = (fromPath && fromPath !== '/login') ? fromPath : '/'
 
