@@ -11,13 +11,11 @@ import * as actionCreaters from 'reducers/actions'
 import { storage } from '@lenochen/dio'
 import styled from 'styled-components'
 import NotFoundPage from './modules/404page'
+import { View } from 'components'
 
-const Content = props => {
-  return (
-    <div>{props.children}</div>
-  )
-}
-
+const Content = styled(View)`
+  flex: 1;
+`
 const MainView = styled.div`
   
 `
@@ -27,10 +25,18 @@ const MainContent = styled.div`
   .sidebar {
     width: 350px;
   }
-  .content {
-    flex: 1;
-  }
 `
+
+const getRoutes = routes => {
+  let routesArr = []
+  routes.forEach(r => {
+    if (r.childRoutes) {
+      routesArr = routesArr.concat(getRoutes(r.childRoutes))
+    }
+    routesArr.push(r)
+  })
+  return routesArr
+}
 
 @connect(({ login }) => ({ login }))
 class App extends React.Component {
@@ -39,8 +45,9 @@ class App extends React.Component {
   }
 
   renderRoutes() {
+    const routes = getRoutes(routerMap)
     return (
-      routerMap.map((item, index) => (
+      routes.map((item, index) => (
         <Route key={index} path={item.path} exact render={props => {
             return <item.component {...props}/>
           }
@@ -56,7 +63,7 @@ class App extends React.Component {
             <Header class/>
             <MainContent>
               <SideBar className='sidebar'/>
-              <Content className='content'>
+              <Content>
                 <Switch>
                   {this.renderRoutes()}
                   {/* <Redirect path={'/'} to={'/dashboard'}/> */}
@@ -66,7 +73,12 @@ class App extends React.Component {
               </Content>
             </MainContent>
           </MainView> 
-        : <Redirect to={{ pathname: '/login', from: this.props.location }} component={Login} />}
+        : 
+        <React.Fragment>
+          <Route path={'/login'} component={Login}/>
+          <Redirect to={{ pathname: '/login', from: this.props.location }} />
+        </React.Fragment>
+        }
       </React.Fragment>
     )
   }
