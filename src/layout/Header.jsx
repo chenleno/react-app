@@ -17,7 +17,6 @@ const HeaderWrap = styled.div`
 `
 const StyledProfile = styled.div`
   flex: 1;
-  background-image: url('../../public/logo192.png');
 `
 const ActionBar = styled.div`
 `
