@@ -8,7 +8,7 @@ const { SubMenu } = Menu
 
 const Sidebar = props => {
   const history = useHistory()
-  const handleClick = e => console.log('click ', e)
+  const handleClick = e => {}
   return (
       <Menu
         onClick={handleClick}

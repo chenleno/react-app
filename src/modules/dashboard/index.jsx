@@ -1,9 +1,10 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import { useParams } from 'react-router-dom'
+import { test } from 'reducers/dashboard'
 
 const Dashboard = props => {
-  const id = useParams()
-  console.log(id)
+  console.log(props)
   return (
     <div>
       这是dashboard,
@@ -12,4 +13,4 @@ const Dashboard = props => {
   )
 }
 
-export default Dashboard
+export default connect(({ dashboard }) => ({ dashboard }))(Dashboard)
