@@ -1,3 +1,4 @@
 import View from './View'
+import AsyncComponent from './AsyncComponents'
 
-export { View }
+export { View, AsyncComponent }
