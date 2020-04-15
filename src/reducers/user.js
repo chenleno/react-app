@@ -1,4 +1,5 @@
 import Api from 'conf/APIS'
+import reducerRegistry from 'utils/reducerRegistry'
 
 const dataSource = [
   {
@@ -30,7 +31,7 @@ const initState = {
   userList: []
 }
 
-export default (state = initState, action) => {
+const reducer = (state = initState, action) => {
   switch (action.type) {
     case 'FETCH_USER':
       action.data = dataSource // mock代码
@@ -56,6 +57,7 @@ export default (state = initState, action) => {
       return state
   }
 }
+export default reducer
 
 export const fetchUsers = () => ({
   type: 'FETCH_USER',
@@ -72,3 +74,5 @@ export const deleteUser = id => ({
   promise: client => client.get(Api, { id }), // 模拟请求
   args: { id }
 })
+
+reducerRegistry.register('user', reducer)

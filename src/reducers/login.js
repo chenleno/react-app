@@ -1,5 +1,7 @@
 // import storage from 'utils/helper/storage'
 import { storage } from '@lenochen/dio'
+import reducerRegistry from 'utils/reducerRegistry'
+
 import Api from 'conf/APIS'
 
 const initState = {
@@ -7,7 +9,7 @@ const initState = {
   isLogin: false
 }
 
-export default (state = initState, action) => {
+const reducer = (state = initState, action) => {
   switch (action.type) {
     case 'LOGIN':
       storage.setItem('profile', action.data)
@@ -24,6 +26,8 @@ export default (state = initState, action) => {
   }
 }
 
+export default reducer
+
 export const login = values => ({
   type: 'LOGIN',
   promise: client => client.get(Api, { ...values }),
@@ -34,3 +38,5 @@ export const logout = () => ({
   type: 'LOGOUT',
   promise: client => client.get(Api)
 })
+
+reducerRegistry.register('login', reducer)
