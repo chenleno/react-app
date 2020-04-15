@@ -30,7 +30,7 @@ const Header = props => {
   return (
     <HeaderWrap>
       <StyledProfile>
-        <Avatar src={require('../images/logo192.png')}/>
+        <Avatar src={require('../static/logo192.png')}/>
         我是hhh
       </StyledProfile>
       <ActionBar>
