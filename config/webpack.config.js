@@ -29,6 +29,9 @@ const postcssNormalize = require('postcss-normalize');
 
 const appPackageJson = require(paths.appPackageJson);
 
+// 打包监测
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+
 // Source maps are resource heavy and can cause out of memory issue for large source files.
 const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== 'false';
 // Some apps do not need the benefits of saving a web request, so not inlining the chunk
@@ -539,6 +542,10 @@ module.exports = function(webpackEnv) {
       ],
     },
     plugins: [
+      isEnvProduction &&  new BundleAnalyzerPlugin({
+          analyzerHost: '127.0.0.1',
+          analyzerPort: 8899
+        }),
       // Generates an `index.html` file with the <script> injected.
       new HtmlWebpackPlugin(
         Object.assign(
