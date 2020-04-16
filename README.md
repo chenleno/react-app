@@ -2,6 +2,10 @@
 ## 项目说明
 基于create-react-app创建的后台模板demo,包含react-router,react-redux,antd等常用库。
 旨在锻炼自己手动搭建基于react栈类后台管理系统的能力。
+技术点：
+- 异步action, 基于redux-thunk和redux.applyMiddleWare
+- 路由按需加载，基于 AsyncComponent 和 动态导入范式 import()
+- redux按需加载，基于 reducerRegistry 动态注册机制
 ## 前端JS库，工具，框架
 - react-router ^5.1.2
 - react-router-dom ^5.1.2
